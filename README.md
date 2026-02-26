@@ -1,86 +1,76 @@
 Sistema de Gestión de E-commerce en Go
+📌 Descripción
 
-Descripción
+Este proyecto consiste en el desarrollo de una API RESTful para la gestión de productos en un sistema de comercio electrónico, implementada en Go (Golang).
 
-Este proyecto consiste en el desarrollo de un sistema de gestión de productos para un e-commerce utilizando el lenguaje de programación Go (Golang).
-El sistema funciona por consola y permite registrar productos, listarlos y validar los datos ingresados por el usuario.
-Se aplicó una arquitectura por capas para organizar correctamente la lógica del programa.
+El sistema aplica arquitectura por capas, principios de Programación Orientada a Objetos adaptados a Go y concurrencia mediante goroutines, permitiendo gestionar productos a través de servicios web en formato JSON.
 
 Objetivo
 
-Aplicar buenas prácticas de programación en Go mediante:
-Entrada de datos por consola
-Validación de errores
-Separación de responsabilidades (arquitectura por capas)
-Uso de módulos en Go
+Aplicar buenas prácticas de desarrollo backend utilizando:
+
+Arquitectura modular por capas
+
+Structs e interfaces en Go
+
+Servicios web con net/http
+
+Serialización JSON
+
+Concurrencia con goroutines y sync.WaitGroup
+
 Control de versiones con Git y GitHub
 
-Arquitectura del proyecto
+Arquitectura
 
-El sistema está dividido en tres capas principales:
+El sistema está organizado en las siguientes capas:
 
-Domain
+Domain: Define las estructuras principales (Product).
 
-Contiene las estructuras principales del sistema.
+Repository: Maneja el almacenamiento en memoria.
 
-Ejemplo: Product
+Service: Contiene la lógica de negocio.
 
-Repository
+Cmd/API: Configura el servidor HTTP y los endpoints.
 
-Encargado del almacenamiento de datos en memoria.
+Endpoints principales
 
-Ejemplo:
+La API permite:
 
-Guardar productos
+Verificar estado con /ping
 
-Obtener productos registrados
+Crear productos (POST /productos)
 
-Service
+Listar productos (GET /productos)
 
-Contiene la lógica del negocio.
+Consultar producto por ID (GET /productos/{id})
 
-Ejemplo:
+Actualizar producto (PUT /productos/{id})
 
-Registrar productos
+Eliminar producto (DELETE /productos/{id})
 
-Listar productos
+Demostrar concurrencia con /productos/cargar-demo
 
-Cmd/App
+El endpoint de carga demo crea productos en paralelo utilizando goroutines.
 
-Punto de entrada del programa (main.go) y menú interactivo.
+Ejecución
 
-Funcionalidades
+Desde la carpeta src:
 
-El sistema permite:
-Registrar productos
-Listar productos registrados
-Validar entradas del usuario
-Manejo de errores en consola
+go run ./cmd/api
 
-Ejecución del programa
+La API se ejecuta en:
 
-Ubicarse dentro de la carpeta src:
+http://localhost:8080
 
-cd src
-go run ./cmd/app
+Tecnologías
 
-Ejemplo de uso
---- Menú Principal ---
-1. Registrar producto
-2. Listar productos
-3. Salir
-
-Ingrese ID: 1
-Ingrese nombre: Arroz
-Ingrese precio: 2.50
-
-Producto registrado correctamente
-
-Tecnologías utilizadas
 Go (Golang)
-Git
-GitHub
-Programación por capas
+net/http
+JSON
+Goroutines
+Git & GitHub
 
 Autor
+
 Keren Parra
