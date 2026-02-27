@@ -70,6 +70,8 @@ net/http
 JSON
 Goroutines
 Git & GitHub
+Fecha: Febrero 2026
+Asignatura: Programación Orientada a Objetos
 
 Autor
 
